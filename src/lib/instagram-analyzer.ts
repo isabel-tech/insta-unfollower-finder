@@ -1,3 +1,4 @@
+
 import { InstagramUser } from './types';
 
 export function analyzeInstagramData(
@@ -30,9 +31,12 @@ export function analyzeInstagramData(
       } else if (follower.name) {
         // Yet another format sometimes seen
         return follower.name;
+      } else if (follower.pk) {
+        // Sometimes IG uses 'pk' field for username
+        return follower.pk;
       } else if (typeof follower === 'object' && follower !== null) {
         // Attempt to find a property that might contain the username
-        const possibleUsernames = ['user', 'username', 'name', 'user_name', 'id'];
+        const possibleUsernames = ['user', 'username', 'name', 'user_name', 'id', 'pk', 'account'];
         for (const key of possibleUsernames) {
           if (follower[key] && typeof follower[key] === 'string') {
             return follower[key];
@@ -85,9 +89,16 @@ export function analyzeInstagramData(
           full_name: follow.title || '',
           profile_pic_url: null
         };
+      } else if (follow.pk) {
+        // Sometimes IG uses 'pk' field
+        return {
+          username: follow.pk,
+          full_name: follow.full_name || '',
+          profile_pic_url: null
+        };
       } else if (typeof follow === 'object' && follow !== null) {
         // Try to find username in different properties
-        const possibleUsernames = ['user', 'username', 'name', 'user_name', 'id'];
+        const possibleUsernames = ['user', 'username', 'name', 'user_name', 'id', 'pk', 'account'];
         for (const key of possibleUsernames) {
           if (follow[key] && typeof follow[key] === 'string') {
             return {
@@ -107,3 +118,4 @@ export function analyzeInstagramData(
   
   return notFollowingBack;
 }
+
