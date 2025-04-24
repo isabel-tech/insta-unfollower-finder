@@ -444,4 +444,3 @@ const FileUploader: React.FC<FileUploaderProps> = ({ onFileProcessed, language, 
 };
 
 export default FileUploader;
-
