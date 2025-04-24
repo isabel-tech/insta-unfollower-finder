@@ -41,21 +41,39 @@ const FileUploader: React.FC<FileUploaderProps> = ({ onFileProcessed, language, 
       // Read the zip file
       const zip = await JSZip.loadAsync(file);
       
-      // Look for followers and following JSON files
+      console.log('Files in ZIP:', Object.keys(zip.files));
+      
+      // Look for followers and following JSON files with more flexible patterns
       let followersFile = null;
       let followingFile = null;
       
-      // Search for the JSON files in the ZIP structure
+      // Search for files with more flexible patterns
       zip.forEach((relativePath, zipEntry) => {
-        if (relativePath.includes('followers_') && relativePath.endsWith('.json')) {
+        // Convert to lowercase for case-insensitive matching
+        const lowerPath = relativePath.toLowerCase();
+        
+        // Log the file being checked for debugging
+        console.log('Checking file in ZIP:', relativePath);
+        
+        // Look for followers files with multiple possible patterns
+        if ((lowerPath.includes('follower') || lowerPath.includes('seguidor')) && 
+            (lowerPath.endsWith('.json') || lowerPath.includes('/connections/followers/') || 
+             lowerPath.includes('/subscriptions/'))) {
           followersFile = zipEntry;
-        } else if (relativePath.includes('following_') && relativePath.endsWith('.json')) {
+          console.log('Found followers file:', relativePath);
+        } 
+        // Look for following files with multiple possible patterns
+        else if ((lowerPath.includes('following') || lowerPath.includes('seguindo')) && 
+                 (lowerPath.endsWith('.json') || lowerPath.includes('/connections/following/') || 
+                  lowerPath.includes('/subscriptions/'))) {
           followingFile = zipEntry;
+          console.log('Found following file:', relativePath);
         }
       });
       
       // Validate that we found both files
       if (!followersFile || !followingFile) {
+        console.error('Missing required files', { followersFile: !!followersFile, followingFile: !!followingFile });
         toast({
           title: content.fileUploader.errors.missingFiles.title,
           description: content.fileUploader.errors.missingFiles.description,
@@ -74,9 +92,49 @@ const FileUploader: React.FC<FileUploaderProps> = ({ onFileProcessed, language, 
       let followingData;
       
       try {
+        // Try to parse the JSON directly
         followersData = JSON.parse(followersContent);
         followingData = JSON.parse(followingContent);
+        
+        // If we parsed an object but need an array, look for array properties
+        if (!Array.isArray(followersData)) {
+          console.log('Followers data is not an array, trying to find array property');
+          // Try to find an array property in the parsed object
+          const possibleArrayProps = Object.values(followersData).filter(Array.isArray);
+          if (possibleArrayProps.length > 0) {
+            // Use the first array property found
+            followersData = possibleArrayProps[0];
+            console.log('Found followers array with length:', followersData.length);
+          }
+        }
+        
+        if (!Array.isArray(followingData)) {
+          console.log('Following data is not an array, trying to find array property');
+          // Try to find an array property in the parsed object
+          const possibleArrayProps = Object.values(followingData).filter(Array.isArray);
+          if (possibleArrayProps.length > 0) {
+            // Use the first array property found
+            followingData = possibleArrayProps[0];
+            console.log('Found following array with length:', followingData.length);
+          }
+        }
+        
+        // Additional check for relationship folders structure
+        if (!Array.isArray(followersData) || followersData.length === 0) {
+          // Check if we have nested relationships array
+          if (followersData && followersData.relationships_followers) {
+            followersData = followersData.relationships_followers;
+          }
+        }
+        
+        if (!Array.isArray(followingData) || followingData.length === 0) {
+          // Check if we have nested relationships array
+          if (followingData && followingData.relationships_following) {
+            followingData = followingData.relationships_following;
+          }
+        }
       } catch (error) {
+        console.error('Error parsing JSON:', error);
         toast({
           title: content.fileUploader.errors.invalidFormat.title,
           description: content.fileUploader.errors.invalidFormat.description,
@@ -87,8 +145,12 @@ const FileUploader: React.FC<FileUploaderProps> = ({ onFileProcessed, language, 
         return;
       }
       
-      // Check if the data has the expected structure
+      // Final check if data is in expected format
       if (!Array.isArray(followersData) || !Array.isArray(followingData)) {
+        console.error('Invalid data structure', {
+          followersIsArray: Array.isArray(followersData),
+          followingIsArray: Array.isArray(followingData),
+        });
         toast({
           title: content.fileUploader.errors.invalidStructure.title,
           description: content.fileUploader.errors.invalidStructure.description,
