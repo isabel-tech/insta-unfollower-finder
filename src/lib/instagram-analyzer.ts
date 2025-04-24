@@ -1,4 +1,3 @@
-
 import { InstagramUser } from './types';
 
 export function analyzeInstagramData(
