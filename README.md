@@ -1,14 +1,14 @@
-# InstaBack
+# InstaRadar
 
 ## 📄 Informações do projeto
 
-- **URL**: [https://www.instaback.com]
-- **Repositório**: [https://github.com/isabel-tech/insta-back.git](https://github.com/isabel-tech/insta-back.git)
+- **URL**: [https://www.instaradar.com.br]
+- **Repositório**: [https://github.com/isabel-tech/insta-unfollower-finder.git](https://github.com/isabel-tech/insta-unfollower-finder.git)
 
 
 ## Sobre o projeto
 
-O **Insta Unfollower Finder** é uma ferramenta que permite visualizar quem você segue no Instagram, mas que não te segue de volta.  
+O **InstaRadar** é uma ferramenta que permite visualizar quem você segue no Instagram, mas que não te segue de volta.  
 Com uma interface simples e intuitiva, o projeto foi desenvolvido para ajudar usuários a gerenciar melhor suas conexões na rede social.
 
 
