@@ -1,73 +1,93 @@
-# Welcome to your Lovable project
+Claro, aqui está tudo já formatado 100% em **Markdown**, prontinho para você copiar e colar no seu `README.md`:
 
-## Project info
+---
 
-**URL**: https://lovable.dev/projects/474332ea-51c0-4875-aafd-ee6324458713
+# Insta Unfollower Finder
 
-## How can I edit this code?
+## 📄 Informações do projeto
 
-There are several ways of editing your application.
+- **URL**: [https://lovable.dev/projects/474332ea-51c0-4875-aafd-ee6324458713](https://lovable.dev/projects/474332ea-51c0-4875-aafd-ee6324458713)
+- **Repositório**: [https://github.com/isabel-tech/insta-unfollower-finder.git](https://github.com/isabel-tech/insta-unfollower-finder.git)
 
-**Use Lovable**
+## 🧠 Sobre o projeto
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/474332ea-51c0-4875-aafd-ee6324458713) and start prompting.
+O **Insta Unfollower Finder** é uma ferramenta que permite visualizar quem você segue no Instagram, mas que não te segue de volta.  
+Com uma interface simples e intuitiva, o projeto foi desenvolvido para ajudar usuários a gerenciar melhor suas conexões na rede social.
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## ✏️ Como posso editar este código?
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Existem várias maneiras de editar sua aplicação:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **Editar localmente com seu IDE preferido**
 
-Follow these steps:
+Se você deseja trabalhar localmente, basta clonar este repositório:
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```bash
+git clone https://github.com/isabel-tech/insta-unfollower-finder.git
+cd insta-unfollower-finder
 ```
 
-**Edit a file directly in GitHub**
+Após fazer suas alterações, envie-as com:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+git add .
+git commit -m "Minha atualização"
+git push
+```
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 📦 Tecnologias utilizadas
 
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
+- HTML5
+- CSS3
+- JavaScript
 - React
-- shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
+---
 
-Simply open [Lovable](https://lovable.dev/projects/474332ea-51c0-4875-aafd-ee6324458713) and click on Share -> Publish.
+## 🤝 Como contribuir
 
-## Can I connect a custom domain to my Lovable project?
+Quer contribuir? Sinta-se à vontade!  
+Basta fazer um **fork** do projeto e seguir os passos abaixo:
 
-Yes, you can!
+1. Crie uma nova branch:
+   ```bash
+   git checkout -b minha-nova-funcionalidade
+   ```
+2. Faça suas alterações.
+3. Faça o commit:
+   ```bash
+   git commit -m "Adicionando nova funcionalidade"
+   ```
+4. Envie sua branch:
+   ```bash
+   git push origin minha-nova-funcionalidade
+   ```
+5. Abra um **Pull Request**.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+---
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## 🧹 Boas práticas
+
+- Escreva códigos limpos e bem comentados.
+- Mantenha uma estrutura de pastas organizada.
+- Teste suas alterações antes de enviar.
+- Respeite o estilo e a lógica do projeto.
+
+---
+
+## 👨‍💻 Desenvolvedores
+
+- dev@gether
+
+---
+
+## ✨ Agradecimento
+
+Obrigado por fazer parte deste projeto!  
+Vamos construir algo incrível juntos. 🚀
+
