@@ -14,7 +14,7 @@ const UnfollowersList: React.FC<UnfollowersListProps> = ({ language, content, us
   return (
     <div className="mt-8 animate-fade-in">
       <h3 className="text-2xl font-semibold mb-6 bg-gradient-to-r from-brand-purple to-brand-light bg-clip-text text-transparent">
-        Contas que não te seguem de volta: {unfollowersCount}
+      {content.unfollowersList.title}: {unfollowersCount}
 
       </h3>
       <ScrollArea className="h-[400px] rounded-md border border-border">
@@ -42,7 +42,7 @@ const UnfollowersList: React.FC<UnfollowersListProps> = ({ language, content, us
                     className="w-full bg-gradient-to-r from-brand-purple to-brand-light hover:opacity-90 transition-opacity text-white"
                     size="sm"
                   >
-                    Ver perfil
+                    {content.unfollowersList.viewProfile}
                   </Button>
                 </a>
               </div>

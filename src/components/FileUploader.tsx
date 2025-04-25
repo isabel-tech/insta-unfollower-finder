@@ -21,21 +21,13 @@ const FileUploader: React.FC<FileUploaderProps> = ({ onFileProcessed, language, 
   const { toast } = useToast();
 
   const validateFile = (file: File) => {
-    // Verifica se é um arquivo ZIP
     if (file.type !== 'application/zip' && !file.name.endsWith('.zip')) {
-      throw new Error(language === 'pt' ? 
-        'Por favor, envie um arquivo ZIP válido' : 
-        'Please upload a valid ZIP file'
-      );
+      throw new Error (content.fileUploader.errors.invalidType.description);
     }
 
-    // Verifica o tamanho do arquivo (máximo 10MB)
     const maxSize = 10 * 1024 * 1024; // 10MB
     if (file.size > maxSize) {
-      throw new Error(language === 'pt' ? 
-        'O arquivo é muito grande. Tamanho máximo: 10MB' : 
-        'File is too large. Maximum size: 10MB'
-      );
+      throw new Error(content.fileUploader.errors.processingError.description);
     }
 
     return true;
@@ -46,7 +38,6 @@ const FileUploader: React.FC<FileUploaderProps> = ({ onFileProcessed, language, 
     setFileName(file.name);
 
     try {
-      // Valida o arquivo
       validateFile(file);
 
       const zip = new JSZip();
@@ -55,18 +46,13 @@ const FileUploader: React.FC<FileUploaderProps> = ({ onFileProcessed, language, 
       const followersPath = "connections/followers_and_following/followers_1.json";
       const followingPath = "connections/followers_and_following/following.json";
 
-      // Verifica se os arquivos necessários existem
       const followersFile = zipContents.file(followersPath);
       const followingFile = zipContents.file(followingPath);
 
       if (!followersFile || !followingFile) {
-        throw new Error(language === 'pt' ? 
-          'Arquivo ZIP inválido: arquivos de seguidores não encontrados' : 
-          'Invalid ZIP file: followers files not found'
-        );
+        throw new Error(content.fileUploader.errors.missingFiles.description);
       }
 
-      // Lê os seguidores
       const followersData = await followersFile.async("text");
       let followers;
       try {
@@ -74,13 +60,9 @@ const FileUploader: React.FC<FileUploaderProps> = ({ onFileProcessed, language, 
           JSON.parse(followersData).map(entry => entry.string_list_data[0].value)
         );
       } catch (e) {
-        throw new Error(language === 'pt' ? 
-          'Formato inválido do arquivo de seguidores' : 
-          'Invalid followers file format'
-        );
+        throw new Error(content.fileUploader.errors.invalidFormat.description);
       }
 
-      // Lê quem você segue
       const followingData = await followingFile.async("text");
       let following;
       try {
@@ -88,23 +70,16 @@ const FileUploader: React.FC<FileUploaderProps> = ({ onFileProcessed, language, 
           JSON.parse(followingData).relationships_following.map(entry => entry.string_list_data[0].value)
         );
       } catch (e) {
-        throw new Error(language === 'pt' ? 
-          'Formato inválido do arquivo de seguindo' : 
-          'Invalid following file format'
-        );
+        throw new Error(content.fileUploader.errors.invalidStructure.description);
       }
 
-      // Diferença: quem você segue mas não te segue de volta
       const notFollowingBack = [...following].filter(user => !followers.has(user));
 
-      // Atualiza o estado com o resultado
       setResult(notFollowingBack);
       
       toast({
-        title: language === 'pt' ? 'Sucesso!' : 'Success!',
-        description: language === 'pt' ? 
-          'Arquivo processado com sucesso' : 
-          'File processed successfully',
+        title: content.fileUploader.success.title,
+        description: content.fileUploader.success.description,
         variant: "default",
       });
 
@@ -112,7 +87,7 @@ const FileUploader: React.FC<FileUploaderProps> = ({ onFileProcessed, language, 
       console.error("Error processing file:", error);
       setResult([]);
       toast({
-        title: language === 'pt' ? 'Erro' : 'Error',
+        title: content.fileUploader.errors.processingError.title,
         description: error.message,
         variant: "destructive",
       });

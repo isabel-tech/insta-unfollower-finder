@@ -1,4 +1,3 @@
-
 export interface InstagramUser {
   username: string;
   full_name?: string;
@@ -18,7 +17,7 @@ export interface LanguageContent {
       title: string;
       description: string;
     };
-    errors: {
+  errors: {
       invalidType: {
         title: string;
         description: string;
@@ -39,16 +38,18 @@ export interface LanguageContent {
         title: string;
         description: string;
       };
+      fileTooLarge: {
+        title: string;
+        description: string;
+      };
     };
   };
-
   unfollowersList: {
-    title: string; 
-    viewProfile: string; 
-    total: string; 
-    emptyList: string; 
+    title: string;
+    viewProfile: string;
+    total: string;
+    emptyList: string;
   };
-
   instructions: {
     title: string;
     steps: string[];
@@ -97,23 +98,27 @@ export const languageContent: Record<'pt' | 'en', LanguageContent> = {
       errors: {
         invalidType: {
           title: 'Tipo de arquivo inválido',
-          description: 'Por favor, selecione um arquivo ZIP (baixado do Instagram).',
+          description: 'Por favor, envie um arquivo ZIP válido',
         },
         missingFiles: {
           title: 'Arquivos necessários não encontrados',
-          description: 'O arquivo ZIP não contém os dados de seguidores ou seguidos necessários.',
+          description: 'Arquivo ZIP inválido: arquivos de seguidores não encontrados',
         },
         invalidFormat: {
           title: 'Formato de arquivo inválido',
-          description: 'Os arquivos JSON no ZIP estão em um formato inválido.',
+          description: 'Formato inválido do arquivo de seguidores',
         },
         invalidStructure: {
           title: 'Estrutura de dados inválida',
-          description: 'Os arquivos encontrados não possuem a estrutura esperada do Instagram.',
+          description: 'Formato inválido do arquivo de seguindo',
         },
         processingError: {
           title: 'Erro ao processar',
           description: 'Ocorreu um erro ao processar o arquivo. Tente novamente.',
+        },
+        fileTooLarge: {
+          title: 'Arquivo muito grande',
+          description: 'O arquivo é muito grande. Tamanho máximo: 10MB',
         },
       },
     },
@@ -135,7 +140,7 @@ export const languageContent: Record<'pt' | 'en', LanguageContent> = {
         'Clique em "Avançar" ',
         'Clique em "Baixar" no dispostivo e em "Formato" mude para "JSON"',
         'Clique em "Salvar" e "Criar arquivos"',
-        'Você receberá um e-mail intitulado "O arquivo das suas informações na Meta está pronto para download" com um link para fazer o download das suas informações. Clique em "Baixar suas informações" e siga as instruções para concluir o download das suas informações. Mande o arquivo em formato ZIP para essa ferramenta.', 
+        'Você receberá um e-mail intitulado "O arquivo das suas informações na Meta está pronto para download" com um link para fazer o download das suas informações. Clique em "Baixar suas informações" e siga as instruções para concluir o download das suas informações. Mande o arquivo em formato ZIP para essa ferramenta.',
       ],
       noteTitle: 'Importante:',
       noteContent: 'O Instagram pode levar de algumas horas até alguns dias para enviar o arquivo com seus dados, dependendo do tamanho da conta.',
@@ -198,23 +203,27 @@ export const languageContent: Record<'pt' | 'en', LanguageContent> = {
       errors: {
         invalidType: {
           title: 'Invalid file type',
-          description: 'Please select a ZIP file (downloaded from Instagram).',
+          description: 'Please upload a valid ZIP file',
         },
         missingFiles: {
           title: 'Required files not found',
-          description: 'The ZIP file does not contain the required followers or following data.',
+          description: 'Invalid ZIP file: followers files not found',
         },
         invalidFormat: {
           title: 'Invalid file format',
-          description: 'The JSON files in the ZIP are in an invalid format.',
+          description: 'Invalid followers file format',
         },
         invalidStructure: {
           title: 'Invalid data structure',
-          description: 'The files found do not have the expected Instagram structure.',
+          description: 'Invalid following file format',
         },
         processingError: {
           title: 'Processing error',
           description: 'An error occurred while processing the file. Please try again.',
+        },
+        fileTooLarge: {
+          title: 'File too large',
+          description: 'File is too large. Maximum size: 10MB',
         },
       },
     },
@@ -225,7 +234,7 @@ export const languageContent: Record<'pt' | 'en', LanguageContent> = {
       emptyList: 'No accounts found that don’t follow you back',
     },
     instructions: {
-      title: 'How to Download Your Instagram Data(Read all the steps carefully)',
+      title: 'How to Download Your Instagram Data (Read all the steps carefully)',
       steps: [
         'Log in to your Instagram account',
         'Go to your profile and click on "More" and select "Your Activity"',
@@ -236,7 +245,7 @@ export const languageContent: Record<'pt' | 'en', LanguageContent> = {
         'Click on "Next"',
         'Click on "Download" on your device and under "Format" change to "JSON"',
         'Click on "Save" and "Create Files"',
-        'You will receive an email titled "Your Meta Information file is ready for download" with a link to download your information. Click on "Download Your Information" and follow the instructions to complete the download of your information. Upload the file in ZIP format to this tool.', 
+        'You will receive an email titled "Your Meta Information file is ready for download" with a link to download your information. Click on "Download Your Information" and follow the instructions to complete the download of your information. Upload the file in ZIP format to this tool.',
       ],
       noteTitle: 'Important:',
       noteContent: 'Instagram may take from a few hours to several days to send your data file, depending on the size of your account.',
