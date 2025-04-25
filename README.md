@@ -1,18 +1,18 @@
-
-# Insta Unfollower Finder
+# InstaBack
 
 ## 📄 Informações do projeto
 
-- **URL**: [https://lovable.dev/projects/474332ea-51c0-4875-aafd-ee6324458713](https://lovable.dev/projects/474332ea-51c0-4875-aafd-ee6324458713)
-- **Repositório**: [https://github.com/isabel-tech/insta-unfollower-finder.git](https://github.com/isabel-tech/insta-unfollower-finder.git)
+- **URL**: [https://www.instaback.com]
+- **Repositório**: [https://github.com/isabel-tech/insta-back.git](https://github.com/isabel-tech/insta-back.git)
 
-## 🧠 Sobre o projeto
+
+## Sobre o projeto
 
 O **Insta Unfollower Finder** é uma ferramenta que permite visualizar quem você segue no Instagram, mas que não te segue de volta.  
 Com uma interface simples e intuitiva, o projeto foi desenvolvido para ajudar usuários a gerenciar melhor suas conexões na rede social.
 
 
-## ✏️ Como posso editar este código?
+## Como posso editar este código?
 
 Existem várias maneiras de editar sua aplicação:
 
@@ -33,8 +33,7 @@ git commit -m "Minha atualização"
 git push
 ```
 
-
-## 📦 Tecnologias utilizadas
+## Tecnologias utilizadas
 
 - HTML5
 - CSS3
@@ -43,7 +42,7 @@ git push
 - Tailwind CSS
 
 
-## 🤝 Como contribuir
+## Como contribuir
 
 Quer contribuir? Sinta-se à vontade!  
 Basta fazer um **fork** do projeto e seguir os passos abaixo:
@@ -64,7 +63,7 @@ Basta fazer um **fork** do projeto e seguir os passos abaixo:
 5. Abra um **Pull Request**.
 
 
-## 🧹 Boas práticas
+## Boas práticas
 
 - Escreva códigos limpos e bem comentados.
 - Mantenha uma estrutura de pastas organizada.
@@ -72,13 +71,13 @@ Basta fazer um **fork** do projeto e seguir os passos abaixo:
 - Respeite o estilo e a lógica do projeto.
 
 
-## 👨‍💻 Desenvolvedores
+## Desenvolvedores
 
 - dev@gether
 
 
-## ✨ Agradecimento
+## Agradecimento
 
 Obrigado por fazer parte deste projeto!  
-Vamos construir algo incrível juntos. 🚀
+Vamos construir algo incrível juntos.✨
 
