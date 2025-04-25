@@ -88,6 +88,6 @@
 
   /* Custom classes */
   .gradient-text {
-    @apply bg-purple-gradient inline-block text-transparent bg-clip-text;
+    @apply bg-orange-gradient inline-block text-transparent bg-clip-text;
   }
 }

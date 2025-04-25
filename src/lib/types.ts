@@ -41,6 +41,14 @@ export interface LanguageContent {
       };
     };
   };
+
+  unfollowersList: {
+    title: string; 
+    viewProfile: string; 
+    total: string; 
+    emptyList: string; 
+  };
+
   instructions: {
     title: string;
     steps: string[];
@@ -109,17 +117,25 @@ export const languageContent: Record<'pt' | 'en', LanguageContent> = {
         },
       },
     },
+    unfollowersList: {
+      title: 'Contas que não te seguem de volta',
+      viewProfile: 'Ver perfil',
+      total: 'Total',
+      emptyList: 'Nenhuma conta encontrada que não te segue de volta',
+    },
     instructions: {
-      title: 'Como baixar seus dados do Instagram',
+      title: 'Como baixar seus dados do Instagram (Leia com atenção todos os passos)',
       steps: [
-        'Acesse sua conta do Instagram no navegador ou no aplicativo móvel',
-        'Vá para o seu perfil e clique em "Configurações"',
-        'Selecione "Privacidade e Segurança"',
-        'Role para baixo e clique em "Solicitação de download de dados"',
-        'Insira seu e-mail e senha para confirmar',
-        'Selecione o formato "JSON" e clique em "Próximo"',
-        'Aguarde o e-mail do Instagram com o link para download do arquivo ZIP',
-        'Faça o download do arquivo ZIP e use-o nesta ferramenta',
+        'Acesse sua conta do Instagram ',
+        'Vá para o seu perfil e clique em "Mais" e selecione "Sua atividade" ',
+        'Clique em "Baixar suas Informações" e "Continuar"',
+        'Selecione "Baixar ou transferir Informações" e escolha a conta do Instagram desejada',
+        'Clique em "Avançar" ',
+        'Clique em "Algumas das suas informações" e role até a opção "Seguidores e Seguindo"',
+        'Clique em "Avançar" ',
+        'Clique em "Baixar" no dispostivo e em "Formato" mude para "JSON"',
+        'Clique em "Salvar" e "Criar arquivos"',
+        'Você receberá um e-mail intitulado "O arquivo das suas informações na Meta está pronto para download" com um link para fazer o download das suas informações. Clique em "Baixar suas informações" e siga as instruções para concluir o download das suas informações. Mande o arquivo em formato ZIP para essa ferramenta.', 
       ],
       noteTitle: 'Importante:',
       noteContent: 'O Instagram pode levar de algumas horas até alguns dias para enviar o arquivo com seus dados, dependendo do tamanho da conta.',
@@ -202,17 +218,25 @@ export const languageContent: Record<'pt' | 'en', LanguageContent> = {
         },
       },
     },
+    unfollowersList: {
+      title: 'Accounts that don’t follow you back',
+      viewProfile: 'View profile',
+      total: 'Total',
+      emptyList: 'No accounts found that don’t follow you back',
+    },
     instructions: {
-      title: 'How to Download Your Instagram Data',
+      title: 'How to Download Your Instagram Data(Read all the steps carefully)',
       steps: [
-        'Access your Instagram account on a browser or mobile app',
-        'Go to your profile and click on "Settings"',
-        'Select "Privacy and Security"',
-        'Scroll down and click on "Data Download Request"',
-        'Enter your email and password to confirm',
-        'Select "JSON" format and click "Next"',
-        'Wait for the Instagram email with the ZIP file download link',
-        'Download the ZIP file and use it with this tool',
+        'Log in to your Instagram account',
+        'Go to your profile and click on "More" and select "Your Activity"',
+        'Click on "Download Your Information" and "Continue"',
+        'Select "Download or Transfer Information" and choose the desired Instagram account',
+        'Click on "Next"',
+        'Click on "Some of Your Information" and scroll down to the "Followers and Following" option',
+        'Click on "Next"',
+        'Click on "Download" on your device and under "Format" change to "JSON"',
+        'Click on "Save" and "Create Files"',
+        'You will receive an email titled "Your Meta Information file is ready for download" with a link to download your information. Click on "Download Your Information" and follow the instructions to complete the download of your information. Upload the file in ZIP format to this tool.', 
       ],
       noteTitle: 'Important:',
       noteContent: 'Instagram may take from a few hours to several days to send your data file, depending on the size of your account.',
