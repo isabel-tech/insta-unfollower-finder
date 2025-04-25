@@ -1,6 +1,3 @@
-Claro, aqui está tudo já formatado 100% em **Markdown**, prontinho para você copiar e colar no seu `README.md`:
-
----
 
 # Insta Unfollower Finder
 
@@ -14,7 +11,6 @@ Claro, aqui está tudo já formatado 100% em **Markdown**, prontinho para você 
 O **Insta Unfollower Finder** é uma ferramenta que permite visualizar quem você segue no Instagram, mas que não te segue de volta.  
 Com uma interface simples e intuitiva, o projeto foi desenvolvido para ajudar usuários a gerenciar melhor suas conexões na rede social.
 
----
 
 ## ✏️ Como posso editar este código?
 
@@ -37,7 +33,6 @@ git commit -m "Minha atualização"
 git push
 ```
 
----
 
 ## 📦 Tecnologias utilizadas
 
@@ -47,7 +42,6 @@ git push
 - React
 - Tailwind CSS
 
----
 
 ## 🤝 Como contribuir
 
@@ -69,7 +63,6 @@ Basta fazer um **fork** do projeto e seguir os passos abaixo:
    ```
 5. Abra um **Pull Request**.
 
----
 
 ## 🧹 Boas práticas
 
@@ -78,13 +71,11 @@ Basta fazer um **fork** do projeto e seguir os passos abaixo:
 - Teste suas alterações antes de enviar.
 - Respeite o estilo e a lógica do projeto.
 
----
 
 ## 👨‍💻 Desenvolvedores
 
 - dev@gether
 
----
 
 ## ✨ Agradecimento
 
