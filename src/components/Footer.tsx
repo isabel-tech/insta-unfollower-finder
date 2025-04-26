@@ -12,7 +12,7 @@ const Footer: React.FC<FooterProps> = ({ language, content }) => {
     <footer className="py-6 mt-12 border-t">
       <div className="container text-center text-sm text-muted-foreground">
         <p>
-          &copy; {new Date().getFullYear()} InstaUnfollowers | {content.footer.rights}
+          &copy; {new Date().getFullYear()} InstaRadar | {content.footer.rights}
         </p>
         <p className="mt-1">
           {content.footer.disclaimer}
