@@ -1,22 +1,16 @@
-# Welcome to your Lovable project
+# Bem-vindo ao seu projeto
 
-## Project info
+## Informações do projeto
 
 **URL**: https://lovable.dev/projects/474332ea-51c0-4875-aafd-ee6324458713
 
-## How can I edit this code?
+## Como posso editar este código?
 
-There are several ways of editing your application.
+Existem várias maneiras de editar sua aplicação.
 
-**Use Lovable**
+**Editar localmente com seu IDE preferido**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/474332ea-51c0-4875-aafd-ee6324458713) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Se você deseja trabalhar localmente usando seu próprio IDE, pode clonar este repositório e enviar alterações. As alterações enviadas também serão refletidas.
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
