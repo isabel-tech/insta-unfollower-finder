@@ -6,8 +6,8 @@
 
 ## 📄 Informações do projeto
 
-- **URL**: [https://www.instaradar.com.br]
-- **Repositório**: [https://github.com/isabel-tech/insta-unfollower-finder.git](https://github.com/isabel-tech/insta-unfollower-finder.git)
+- **URL**: https://www.instaradar.com.br
+- **Repositório**: https://github.com/isabel-tech/insta-unfollower-finder.git
 
 ## Como posso editar este código?
 
@@ -84,7 +84,7 @@ Basta fazer um **fork** do projeto e seguir os passos abaixo:
 
 ## Desenvolvedores
 
-- dev@gether
+- _dev2gether_
 
 
 ## Agradecimento
