@@ -1,17 +1,14 @@
-<<<<<<< HEAD
 # Bem-vindo ao seu projeto
 
 ## Informações do projeto
-=======
+
 # InstaRadar
 
 ## 📄 Informações do projeto
->>>>>>> 4034b809749323d1b37241d2df76609da4b6170f
 
 - **URL**: [https://www.instaradar.com.br]
 - **Repositório**: [https://github.com/isabel-tech/insta-unfollower-finder.git](https://github.com/isabel-tech/insta-unfollower-finder.git)
 
-<<<<<<< HEAD
 ## Como posso editar este código?
 
 Existem várias maneiras de editar sua aplicação.
@@ -19,7 +16,6 @@ Existem várias maneiras de editar sua aplicação.
 **Editar localmente com seu IDE preferido**
 
 Se você deseja trabalhar localmente usando seu próprio IDE, pode clonar este repositório e enviar alterações. As alterações enviadas também serão refletidas.
-=======
 
 ## Sobre o projeto
 
@@ -32,7 +28,6 @@ Com uma interface simples e intuitiva, o projeto foi desenvolvido para ajudar us
 Existem várias maneiras de editar sua aplicação:
 
 - **Editar localmente com seu IDE preferido**
->>>>>>> 4034b809749323d1b37241d2df76609da4b6170f
 
 Se você deseja trabalhar localmente, basta clonar este repositório:
 
@@ -95,5 +90,7 @@ Basta fazer um **fork** do projeto e seguir os passos abaixo:
 ## Agradecimento
 
 Obrigado por fazer parte deste projeto!  
+
 Vamos construir algo incrível juntos.✨
 
+Que Deus te abençoe e te dê forças nessa jornada!
