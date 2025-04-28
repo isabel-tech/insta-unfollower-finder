@@ -72,7 +72,7 @@ Basta fazer um **fork** do projeto e seguir os passos abaixo:
    git push origin minha-nova-funcionalidade
    ```
 5. Abra um **Pull Request**.
-
+  
 
 ## Boas práticas
 
